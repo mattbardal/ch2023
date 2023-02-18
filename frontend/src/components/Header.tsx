@@ -1,14 +1,14 @@
-import { Box, Heading } from "@chakra-ui/react";
-import React from "react";
+import { Box, Heading } from "@chakra-ui/react"
 
 export default function Header() {
   return (
-    <Box>
+    <Box py='10px'>
       <Heading
-        background="linear-gradient(to right, #c337dc 0%, #f7e700 25%)"
-        backgroundClip="text"
+        // background="linear-gradient(to right, #8377D1 10%, #F7DD72 55%)"
+        // backgroundClip="text"
+        color='black'
       >
-        education
+        SampleTitleNameGoHere
       </Heading>
     </Box>
   );

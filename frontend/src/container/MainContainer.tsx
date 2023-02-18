@@ -1,12 +1,12 @@
-import { Box } from "@chakra-ui/react"
-import Graph from "../components/Graph"
-import Selects from "../components/Selects"
-import Sliders from "../components/Sliders"
-
+import { Box } from "@chakra-ui/react";
+import Graph from "../components/Graph";
+import PercentWheel from "../components/PercentWheel";
+import Selects from "../components/Selects";
+import Sliders from "../components/Sliders";
 
 export default function MainContainer() {
   return (
-    <Box borderRadius='lg'>
+    <Box borderRadius="lg">
       {/* 
       
 
@@ -18,7 +18,8 @@ export default function MainContainer() {
 
       <Selects />
       <Graph />
+      <PercentWheel />
       <Sliders />
     </Box>
-  )
+  );
 }

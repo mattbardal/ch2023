@@ -4,9 +4,9 @@ import MainContainer from "./container/MainContainer";
 
 function App() {
   return (
-    <Container minW="4xl">
+    <Container minW={{ base: "md", md: "2xl", lg: "4xl" }}>
       <Header />
-      <MainContainer/>
+      <MainContainer />
     </Container>
   );
 }

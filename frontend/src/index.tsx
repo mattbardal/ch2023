@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { ChakraProvider } from "@chakra-ui/react";
+import { myTheme } from "./styles/Theme";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
@@ -16,7 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <ApolloProvider client={client}>
     <React.StrictMode>
-      <ChakraProvider>
+      <ChakraProvider theme={myTheme}>
         <App />
       </ChakraProvider>
     </React.StrictMode>

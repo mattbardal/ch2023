@@ -31,8 +31,8 @@ const CustomSlider = () => {
           <Tooltip
             hasArrow
             bg="boxGradient"
-            color="white"
-            placement="right"
+            color='white'
+            placement='right'
             isOpen
             label={`${sliderValue}x`}
             borderRadius="lg"

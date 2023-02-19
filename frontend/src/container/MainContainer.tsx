@@ -1,4 +1,4 @@
-import { Box, Center, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Center, Grid, GridItem, Text } from "@chakra-ui/react";
 import Graph from "../components/Graph";
 import PercentWheel from "../components/PercentWheel";
 import Selects from "../components/Selects";
@@ -43,8 +43,17 @@ export default function MainContainer() {
           <PercentWheel />
         </GridItem>
         <GridItem pl="2" area={"nothing"}>
-          <Center h="100%" w="100%">
+          <Center w="100%">
             <InfoButton />
+            <Text pl='10px'>
+              About Gini
+            </Text>
+          </Center>
+          <Center w="100%">
+            <InfoButton />
+            <Text pl='10px'>
+              About Gini
+            </Text>
           </Center>
         </GridItem>
       </Grid>

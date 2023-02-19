@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function MainContainer() {
   const [data, setData] = useState();
-  const [value, setValue] = useState('1')
+  const [value, setValue] = useState('svr')
 
 
   useEffect(() => {

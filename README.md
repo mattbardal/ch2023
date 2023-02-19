@@ -2,6 +2,8 @@
 
 The goal of ginius was to find a way to portray data from the World Bank catalog in a fun and interactive way. 
 
+Learn more on the [devpost page](https://devpost.com/software/ginius)!
+
 <img width="1084" alt="Screenshot 2023-02-19 at 8 11 59 AM" src="https://user-images.githubusercontent.com/63923438/219956858-ff90e606-e6a1-422a-8f9d-b4c39c395974.png">
 
 ## To run it locally

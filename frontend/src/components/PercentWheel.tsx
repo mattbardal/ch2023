@@ -55,10 +55,10 @@ export default function PercentWheel() {
   return (
     <Center w="100%" py='15px'>
       <HStack w="100%" justifyContent="space-around">
-        <Circle value={77} label="First" />
-        <Circle value={59} label="Second" />
-        <Circle value={30} label="Third" />
-        <Circle value={10} label="Fourth" />
+        <Circle value={77} label="Error" />
+        <Circle value={59} label="STD. Dev" />
+        <Circle value={30} label="Accur" />
+        <Circle value={10} label="Poggins" />
       </HStack>
     </Center>
   );

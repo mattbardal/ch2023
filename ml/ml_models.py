@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+from flask_restful import Api
 import joblib
 import numpy as np
 from flask_cors import CORS, cross_origin
@@ -19,7 +20,7 @@ def post():
     data = request.get_json()
     return {
         'actual': {
-            1975: 33.3,
+            1975: 33.3, 
             1981: 32.4,
             1987: 31.5,
             1991: 31.0,
@@ -48,8 +49,7 @@ def generatePrediction(model, params):
         current_model = SVR_MODEL
     else:
         current_model = RFR_MODEL
-    print(params)
     return current_model.predict(scale(params))[0]
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4001)
+    app.run(port=8000, debug=True)

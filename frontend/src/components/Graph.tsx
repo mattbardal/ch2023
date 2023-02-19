@@ -47,7 +47,7 @@ export default function Graph({ data } : Props) {
 
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
             <XAxis dataKey="name" />
-            <YAxis />
+            <YAxis domain={['dataMin', 'dataMax']} />
             <Tooltip />
           </LineChart>
         </ResponsiveContainer>

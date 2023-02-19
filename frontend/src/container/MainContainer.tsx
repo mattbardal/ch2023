@@ -128,7 +128,7 @@ export default function MainContainer() {
               </Stack>
             </RadioGroup>
           </Center>
-          <Center w="100%">
+          <Center pt='20px' w="100%">
             <InfoButton />
             <Text pl='10px'>
               About Gini

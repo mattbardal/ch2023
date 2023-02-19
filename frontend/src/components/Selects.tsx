@@ -4,12 +4,7 @@ import getUnicodeFlagIcon from "country-flag-icons/unicode";
 
 export default function Selects() {
   return (
-    <Box
-      mt="5"
-      bg="boxGradient"
-      borderRadius="lg"
-      color="white"
-    >
+    <Box mt="5" bg="boxGradient" borderRadius="lg" color="white">
       <Select
         placeholder="Select a country..."
         border="none"
@@ -27,7 +22,7 @@ export default function Selects() {
           })
           .map((country) => (
             <option key={country.country} value={country.country}>
-              {getUnicodeFlagIcon(country.name)} {country.name}
+              {getUnicodeFlagIcon(country.country)} {country.name}
             </option>
           ))}
       </Select>

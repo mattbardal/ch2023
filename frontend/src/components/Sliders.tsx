@@ -15,7 +15,7 @@ const CustomSlider = () => {
 
   return (
     <>
-      <Box p="3" py="20px" bgColor="grey.50" borderRadius="full" shadow="lg">
+      <Box p="1" py="20px" bgColor="grey.50" borderRadius="full" shadow="lg">
         <Slider
           aria-label="slider-ex-2"
           defaultValue={1}
@@ -31,8 +31,8 @@ const CustomSlider = () => {
           <Tooltip
             hasArrow
             bg="boxGradient"
-            color='white'
-            placement='right'
+            color="white"
+            placement="right"
             isOpen
             label={`${sliderValue}x`}
             borderRadius="lg"

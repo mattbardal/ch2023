@@ -19,7 +19,7 @@ export default function MainContainer() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "svr",
+        model: {value},
         params: [
           88.04305267, 68.88765423, 5.334666667, 2.763333333, 0.4993333333,
           8.596, 1.08, 6.82, 31.97, 17.39, 48.21, 9.66, 18.74, 13.22047428,
@@ -60,8 +60,8 @@ export default function MainContainer() {
           <Center w="100%">
             <RadioGroup onChange={setValue} value={value}>
               <Stack direction='row'>
-                <Radio value='1'>SVM</Radio>
-                <Radio value='2'>RFR</Radio>
+                <Radio value='svr'>SVR</Radio>
+                <Radio value='rfr'>RFR</Radio>
               </Stack>
             </RadioGroup>
           </Center>

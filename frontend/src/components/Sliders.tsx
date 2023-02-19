@@ -1,6 +1,7 @@
 import {
   Box,
   HStack,
+  ScaleFade,
   Slider,
   SliderFilledTrack,
   SliderThumb,
@@ -21,23 +22,23 @@ const CustomSlider = () => {
           aria-label="slider-ex-2"
           defaultValue={1}
           orientation="vertical"
-          min={1} max={10} step={0.2}
+          min={0.2} max={2} step={0.2}
           onChange={(v) => setSliderValue(v)}
         >
           <SliderTrack>
             <SliderFilledTrack bg="linear-gradient(to right, #8377D1 10%, #cb92bf )" />
           </SliderTrack>
           <Tooltip
-        hasArrow
-        bg="linear-gradient(to right, #8377D1 10%, #cb92bf )"
-        color='white'
-        placement='right'
-        isOpen
-        label={`${sliderValue}x`}
-        borderRadius='lg'
-      >
-        <SliderThumb w='20px' h='20px' border='2pt solid #B1B1B1'/>
-      </Tooltip>
+            hasArrow
+            bg="linear-gradient(to right, #8377D1 10%, #cb92bf )"
+            color='white'
+            placement='right'
+            isOpen
+            label={`${sliderValue}x`}
+            borderRadius='lg'
+          >
+            <SliderThumb w='20px' h='20px' border='2pt solid #B1B1B1'/>
+          </Tooltip>
         </Slider>
       </Box>
     </>

@@ -1,12 +1,6 @@
-import { Box, HStack, useRadio, useRadioGroup } from "@chakra-ui/react";
+import { Box, Select } from "@chakra-ui/react";
 
-function RadioCard(props: any) {
-  const { getInputProps, getCheckboxProps } = useRadio(props);
-
-  const input = getInputProps();
-
-  const checkbox = getCheckboxProps();
-
+export default function Selects() {
   return (
     <Box as="label">
       <input {...input} />

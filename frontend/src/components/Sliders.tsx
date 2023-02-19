@@ -1,23 +1,24 @@
 import {
   Box,
+  HStack,
   Slider,
   SliderFilledTrack,
   SliderThumb,
   SliderTrack,
   Text,
-  VStack,
 } from "@chakra-ui/react";
 
 const CustomSlider = () => {
   return (
     <>
-      <Text fontWeight="bold" fontSize="xl">
-        cool 1
-      </Text>
       <Box p="3" bgColor="grey.50" borderRadius="full" shadow="lg">
-        <Slider aria-label="slider-ex-2" defaultValue={30}>
+        <Slider
+          aria-label="slider-ex-2"
+          defaultValue={30}
+          orientation="vertical"
+        >
           <SliderTrack>
-            <SliderFilledTrack bg="linear-gradient(to right, #cb63cb 55%,#292541)" />
+            <SliderFilledTrack bg="linear-gradient(to right, #8377D1 10%, #cb92bf )" />
           </SliderTrack>
           <SliderThumb />
         </Slider>
@@ -28,9 +29,21 @@ const CustomSlider = () => {
 
 export default function Sliders() {
   return (
-    <VStack w="100%" h="125px" mt="5" alignItems="left" spacing="10px">
-      <CustomSlider />
-      <CustomSlider />
-    </VStack>
+    <>
+      <HStack
+        w="100%"
+        h="75%"
+        mt="5"
+        alignItems="left"
+        justifyContent="space-around"
+      >
+        <CustomSlider />
+        <CustomSlider />
+      </HStack>
+      <HStack w="100%" mt="5" alignItems="left" justifyContent="space-around">
+        <Text>one</Text>
+        <Text>two</Text>
+      </HStack>
+    </>
   );
 }

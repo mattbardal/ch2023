@@ -4,6 +4,17 @@ The goal of ginius was to find a way to portray data from the World Bank catalog
 
 <img width="1084" alt="Screenshot 2023-02-19 at 8 11 59 AM" src="https://user-images.githubusercontent.com/63923438/219956858-ff90e606-e6a1-422a-8f9d-b4c39c395974.png">
 
+## To run it locally
+
+1) Start the back-end
+  - `cd ml-backend`
+  - `python3 ml_model_api.py`
+ 
+2) Start the front-end
+  - `cd frontend`
+  - `npm i`
+  - `npm start`
+
 ## Features
 - Scale attributes to see effect of education attainment on wealth inequality
 - Select from a list of countries (Canada, Australia, The Netherlands)

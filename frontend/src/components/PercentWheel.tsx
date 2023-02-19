@@ -53,7 +53,7 @@ const Circle = ({ value, label, loading }: CircleProps) => {
 
 export default function PercentWheel() {
   return (
-    <Center w="100%" mt="5">
+    <Center w="100%" py='15px'>
       <HStack w="100%" justifyContent="space-around">
         <Circle value={77} label="First" />
         <Circle value={59} label="Second" />

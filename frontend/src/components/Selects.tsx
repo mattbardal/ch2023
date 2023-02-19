@@ -6,7 +6,7 @@ export default function Selects() {
   return (
     <Box
       mt="5"
-      bgGradient="linear-gradient(to right, #8377D1 10%, #cb92bf )"
+      bg="boxGradient"
       borderRadius="lg"
       color="white"
     >

@@ -14,11 +14,7 @@ export const myTheme = extendTheme ({
       800: '#2E2E2E',
       900: '#212121',
     },
-    primaryBright: '#BB90FB',
-    primaryDim: '#785CA1',
-    secondaryBright: '#20DDCB',
-    secondaryDim: '#0F6159',
-    boxGradient: 'linear-gradient(45deg, #2E2E2E, #515151)',
+    boxGradient: 'linear-gradient(to right, #8377D1 10%, #cb92bf)',
   },
   styles: {
     global: () => ({

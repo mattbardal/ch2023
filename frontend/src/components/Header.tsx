@@ -6,7 +6,7 @@ export default function Header() {
       <HStack>
         <Heading color="black">Look at this</Heading>
         <Heading
-          background="linear-gradient(to right, #8377D1 10%, #cb92bf )"
+          background="boxGradient"
           backgroundClip="text"
         >
           Graph

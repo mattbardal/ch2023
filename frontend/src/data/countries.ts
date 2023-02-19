@@ -1158,7 +1158,7 @@ export const countries = [
     name: "Sudan",
   },
   {
-    country: "SE",
+    country: "SW",
     latitude: "60.128161",
     longitude: "18.643501",
     name: "Sweden",

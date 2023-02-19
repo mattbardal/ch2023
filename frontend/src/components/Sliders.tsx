@@ -1,7 +1,6 @@
 import {
   Box,
   HStack,
-  ScaleFade,
   Slider,
   SliderFilledTrack,
   SliderThumb,
@@ -12,17 +11,18 @@ import {
 import { useState } from "react";
 
 const CustomSlider = () => {
-
-  const [sliderValue, setSliderValue] = useState(1)
+  const [sliderValue, setSliderValue] = useState(1);
 
   return (
     <>
-      <Box p="3" py='20px' bgColor="grey.50" borderRadius="full" shadow="lg">
+      <Box p="3" py="20px" bgColor="grey.50" borderRadius="full" shadow="lg">
         <Slider
           aria-label="slider-ex-2"
           defaultValue={1}
           orientation="vertical"
-          min={0.2} max={2} step={0.2}
+          min={0.2}
+          max={2}
+          step={0.2}
           onChange={(v) => setSliderValue(v)}
         >
           <SliderTrack>
@@ -31,13 +31,13 @@ const CustomSlider = () => {
           <Tooltip
             hasArrow
             bg="linear-gradient(to right, #8377D1 10%, #cb92bf )"
-            color='white'
-            placement='right'
+            color="white"
+            placement="right"
             isOpen
             label={`${sliderValue}x`}
-            borderRadius='lg'
+            borderRadius="lg"
           >
-            <SliderThumb w='20px' h='20px' border='2pt solid #B1B1B1'/>
+            <SliderThumb w="20px" h="20px" border="2pt solid #B1B1B1" />
           </Tooltip>
         </Slider>
       </Box>

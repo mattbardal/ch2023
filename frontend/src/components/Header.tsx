@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Text } from "@chakra-ui/react";
+import { Box, Heading, HStack } from "@chakra-ui/react";
 
 export default function Header() {
   return (

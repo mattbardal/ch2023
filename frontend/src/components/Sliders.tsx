@@ -13,7 +13,6 @@ import { useState } from "react";
 const CustomSlider = () => {
 
   const [sliderValue, setSliderValue] = useState(1)
-  const [showTooltip, setShowTooltip] = useState(true)
 
   return (
     <>
@@ -34,10 +33,10 @@ const CustomSlider = () => {
         color='white'
         placement='right'
         isOpen
-        label={`${sliderValue}%`}
+        label={`${sliderValue}x`}
         borderRadius='lg'
       >
-        <SliderThumb w='20px' h='20px' />
+        <SliderThumb w='20px' h='20px' border='2pt solid #B1B1B1'/>
       </Tooltip>
         </Slider>
       </Box>

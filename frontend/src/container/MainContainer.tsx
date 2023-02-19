@@ -1,4 +1,4 @@
-import { Box, Center, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Center, Grid, GridItem, Radio, RadioGroup, Stack } from "@chakra-ui/react";
 import Graph from "../components/Graph";
 import PercentWheel from "../components/PercentWheel";
 import Selects from "../components/Selects";
@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 
 export default function MainContainer() {
   const [data, setData] = useState();
+  const [value, setValue] = useState('1')
+
 
   useEffect(() => {
     fetch("http://localhost:8000/", {
@@ -55,7 +57,15 @@ export default function MainContainer() {
           <PercentWheel />
         </GridItem>
         <GridItem pl="2" area={"nothing"}>
-          <Center h="100%" w="100%">
+          <Center w="100%">
+            <RadioGroup onChange={setValue} value={value}>
+              <Stack direction='row'>
+                <Radio value='1'>SVM</Radio>
+                <Radio value='2'>RFR</Radio>
+              </Stack>
+            </RadioGroup>
+          </Center>
+          <Center pt='25px' w="100%">
             <InfoButton />
           </Center>
         </GridItem>

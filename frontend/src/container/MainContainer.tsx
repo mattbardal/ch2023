@@ -59,9 +59,28 @@ export default function MainContainer() {
         <GridItem pl="2" area={"nothing"}>
           <Center w="100%">
             <RadioGroup onChange={setValue} value={value}>
-              <Stack direction='row'>
-                <Radio value='svr'>SVR</Radio>
-                <Radio value='rfr'>RFR</Radio>
+              <Stack 
+                direction='row'
+                bg='grey.50'
+                py='5px'
+                px='25px'
+                borderRadius='lg'
+                boxShadow='lg'
+              >
+                <Radio 
+                  value='svr' 
+                  size='lg'
+                  colorScheme='purple'
+                >
+                  SVR
+                </Radio>
+                <Radio 
+                  value='rfr' 
+                  size='lg'
+                  colorScheme='purple'
+                >
+                  RFR
+                </Radio>
               </Stack>
             </RadioGroup>
           </Center>

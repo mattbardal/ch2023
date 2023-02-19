@@ -4,12 +4,10 @@ import MainContainer from "./container/MainContainer";
 
 function App() {
   return (
-    <>
-      <Container minW={{ base: "md", md: "2xl", lg: "4xl" }}>
-        <Header />
-        <MainContainer />
-      </Container>
-    </>
+    <Container minW={{ base: "md", md: "2xl", lg: "5xl" }}>
+      <Header />
+      <MainContainer />
+    </Container>
   );
 }
 

@@ -1,9 +1,9 @@
-import { Box, Center, Grid, GridItem, IconButton } from "@chakra-ui/react";
+import { Box, Center, Grid, GridItem } from "@chakra-ui/react";
 import Graph from "../components/Graph";
 import PercentWheel from "../components/PercentWheel";
 import Selects from "../components/Selects";
 import Sliders from "../components/Sliders";
-import { AiOutlineInfoCircle } from 'react-icons/ai'
+import InfoButton from "../components/InfoButton";
 
 export default function MainContainer() {
   return (
@@ -11,7 +11,7 @@ export default function MainContainer() {
       <Grid
         templateAreas={`"main select"
                         "footer nothing"`}
-        gridTemplateColumns={"1fr 200px"}
+        gridTemplateColumns={"1fr 220px"}
         h="100%"
         gap="1"
         color="blackAlpha.700"
@@ -29,15 +29,7 @@ export default function MainContainer() {
         </GridItem>
         <GridItem pl="2" area={"nothing"}>
           <Center h="100%" w="100%">
-          <IconButton
-            aria-label='info'
-            size='lg'
-            borderRadius='full'
-            variant='ghost'
-            bg=''
-            shadow='lg'
-            icon={<AiOutlineInfoCircle size='lg' />}
-          />
+            <InfoButton />
           </Center>
         </GridItem>
       </Grid>

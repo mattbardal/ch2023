@@ -26,13 +26,19 @@ const CustomSlider = () => {
           onChange={(v) => setSliderValue(v)}
         >
           <SliderTrack>
-            <SliderFilledTrack bg="linear-gradient(to right, #8377D1 10%, #cb92bf )" />
+            <SliderFilledTrack bg="boxGradient" />
           </SliderTrack>
           <Tooltip
             hasArrow
+<<<<<<< HEAD
             bg="linear-gradient(to right, #8377D1 10%, #cb92bf )"
             color="white"
             placement="right"
+=======
+            bg="boxGradient"
+            color='white'
+            placement='right'
+>>>>>>> bcb2318 (added gini info modal)
             isOpen
             label={`${sliderValue}x`}
             borderRadius="lg"
@@ -57,10 +63,12 @@ export default function Sliders() {
       >
         <CustomSlider />
         <CustomSlider />
+        <CustomSlider />
       </HStack>
       <HStack w="100%" mt="5" alignItems="left" justifyContent="space-around">
         <Text>one</Text>
         <Text>two</Text>
+        <Text>three</Text>
       </HStack>
     </>
   );

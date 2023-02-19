@@ -16,18 +16,18 @@ type CircleProps = {
 
 const Circle = ({ value, label, loading }: CircleProps) => {
   const size = useBreakpointValue({
-    base: "75px",
-    lg: "100px",
+    base: "50px",
+    lg: "75px",
   });
 
   const color =
     value > 25
       ? value > 50
         ? value > 75
-          ? "green"
-          : "orange.300"
-        : "orange.500"
-      : "red";
+          ? "pink.300"
+          : "pink.500"
+        : "purple.500"
+      : "black";
 
   return (
     <VStack>
@@ -53,8 +53,8 @@ const Circle = ({ value, label, loading }: CircleProps) => {
 
 export default function PercentWheel() {
   return (
-    <Center w="100%">
-      <HStack w={{ base: "100%", lg: "75%" }} justifyContent="space-between">
+    <Center w="100%" mt="5">
+      <HStack w="100%" justifyContent="space-around">
         <Circle value={77} label="First" />
         <Circle value={59} label="Second" />
         <Circle value={30} label="Third" />

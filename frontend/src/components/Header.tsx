@@ -5,10 +5,7 @@ export default function Header() {
     <Box py="10px">
       <HStack>
         <Heading color="black">Look at this</Heading>
-        <Heading
-          background="boxGradient"
-          backgroundClip="text"
-        >
+        <Heading background="boxGradient" backgroundClip="text">
           Graph
         </Heading>
       </HStack>

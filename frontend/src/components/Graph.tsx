@@ -10,25 +10,31 @@ import {
   ResponsiveContainer,
   ErrorBar,
 } from "recharts";
+import { Data } from "../types";
 
-// generate some random data
-const data = [
-  { name: "Page A", uv: 400, pv: 2400 / 10, amt: 240, errorY: 10, errorX: 10 },
-  { name: "Page B", uv: 300, pv: 4567 / 10, amt: 2400, errorY: 10, errorX: 10 },
-  { name: "Page C", uv: 300, pv: 1398 / 10, amt: 2400, errorY: 10, errorX: 10 },
-  { name: "Page D", uv: 200, pv: 9800 / 10, amt: 2400, errorY: 10, errorX: 10 },
-  { name: "Page E", uv: 278, pv: 3908 / 10, amt: 2400, errorY: 10, errorX: 10 },
-  { name: "Page F", uv: 189, pv: 4800 / 10, amt: 2400, errorY: 10, errorX: 10 },
-];
+type Props = {
+  data: Data;
+};
 
-export default function Graph() {
+export default function Graph({ data } : Props) {
   const [isLoading, setIsLoading] = useState(true);
+
+  // turn data into linechart type
+    const yo = Object.keys(data.actual).map((key: string) => {
+      return {
+        name: key,
+        // @ts-ignore
+        uv: data.actual[key],
+        errorY: 10,
+      }
+    })
+    
 
   return (
     <Center my="5" w="100%" h="500px">
       {isLoading ? (
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart width={600} height={300} data={data}>
+          <LineChart width={600} height={300} data={yo}>
             <Line type="monotone" dataKey="uv" stroke="#5a224e" strokeWidth={2}>
               <ErrorBar
                 dataKey="errorY"
@@ -41,7 +47,7 @@ export default function Graph() {
 
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
             <XAxis dataKey="name" />
-            <YAxis />
+            <YAxis domain={['dataMin', 'dataMax']} />
             <Tooltip />
           </LineChart>
         </ResponsiveContainer>

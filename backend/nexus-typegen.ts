@@ -28,6 +28,14 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenObjects {
+  Actual: { // root type
+    value?: number | null; // Float
+    year?: number | null; // Int
+  }
+  Prediction: { // root type
+    actual: Array<NexusGenRootTypes['Actual'] | null>; // [Actual]!
+    prediction?: number | null; // Float
+  }
   Query: {};
 }
 
@@ -42,18 +50,40 @@ export type NexusGenRootTypes = NexusGenObjects
 export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
+  Actual: { // field return type
+    value: number | null; // Float
+    year: number | null; // Int
+  }
+  Prediction: { // field return type
+    actual: Array<NexusGenRootTypes['Actual'] | null>; // [Actual]!
+    prediction: number | null; // Float
+  }
   Query: { // field return type
-    ok: boolean; // Boolean!
+    prediction: NexusGenRootTypes['Prediction']; // Prediction!
   }
 }
 
 export interface NexusGenFieldTypeNames {
+  Actual: { // field return type name
+    value: 'Float'
+    year: 'Int'
+  }
+  Prediction: { // field return type name
+    actual: 'Actual'
+    prediction: 'Float'
+  }
   Query: { // field return type name
-    ok: 'Boolean'
+    prediction: 'Prediction'
   }
 }
 
 export interface NexusGenArgTypes {
+  Query: {
+    prediction: { // args
+      model: string; // String!
+      params: number[]; // [Float!]!
+    }
+  }
 }
 
 export interface NexusGenAbstractTypeMembers {

@@ -1,4 +1,4 @@
-import { Box, Center, Spinner, Text, VStack } from "@chakra-ui/react";
+import { Center, Spinner, Text, VStack } from "@chakra-ui/react";
 import { useState } from "react";
 import {
   LineChart,
@@ -22,40 +22,37 @@ const data = [
 ];
 
 export default function Graph() {
-
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <Center my="5" w="100%" h="500px">
-      {
-        isLoading ? (
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart width={600} height={300} data={data}>
-              <Line type="monotone" dataKey="uv" stroke="#5a224e" strokeWidth={2}>
-                <ErrorBar
-                  dataKey="errorY"
-                  width={4}
-                  strokeWidth={2}
-                  stroke="green"
-                  direction="y"
-                />
-              </Line>
+      {isLoading ? (
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart width={600} height={300} data={data}>
+            <Line type="monotone" dataKey="uv" stroke="#5a224e" strokeWidth={2}>
+              <ErrorBar
+                dataKey="errorY"
+                width={4}
+                strokeWidth={2}
+                stroke="green"
+                direction="y"
+              />
+            </Line>
 
-              <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-            </LineChart>
-          </ResponsiveContainer>
-        ) : (
-          <Center>
-            <VStack>
-              <Spinner size='xl' />
-              <Text>Please wait...</Text>
-            </VStack>
-          </Center>
-        )
-      }
+            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+          </LineChart>
+        </ResponsiveContainer>
+      ) : (
+        <Center>
+          <VStack>
+            <Spinner size="xl" />
+            <Text>Please wait...</Text>
+          </VStack>
+        </Center>
+      )}
     </Center>
   );
 }

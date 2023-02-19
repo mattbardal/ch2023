@@ -24,33 +24,33 @@ export default function Graph({ data } : Props) {
       return {
         name: key,
         // @ts-ignore
-        uv: data.actual[key],
-        errorY: 10,
+        gini: data.actual[key]
       }
     })
     
+    yo.push({name: "Future", gini: data.prediction } as any)
 
   return (
     <Center my="5" w="100%" h="500px">
       {isLoading ? (
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart width={600} height={300} data={yo}>
-            <Line type="monotone" dataKey="uv" stroke="#5a224e" strokeWidth={2}>
-              <ErrorBar
-                dataKey="errorY"
-                width={4}
-                strokeWidth={2}
-                stroke="green"
-                direction="y"
-              />
-            </Line>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart width={600} height={300} data={yo}>
+              <Line type="monotone" dataKey="gini" stroke="#5a224e" strokeWidth={2}>
+                <ErrorBar
+                  dataKey="errorY"
+                  width={4}
+                  strokeWidth={2}
+                  stroke="green"
+                  direction="y"
+                />
+              </Line>
 
-            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <XAxis dataKey="name" />
-            <YAxis domain={['dataMin', 'dataMax']} />
-            <Tooltip />
-          </LineChart>
-        </ResponsiveContainer>
+              <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+              <XAxis dataKey="name" />
+              <YAxis domain={['dataMin', 'auto']} />
+              <Tooltip />
+            </LineChart>
+          </ResponsiveContainer>
       ) : (
         <Center>
           <VStack>

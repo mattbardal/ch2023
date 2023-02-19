@@ -19,4 +19,5 @@ export type Data = {
     2017: number;
   };
   prediction: number;
+  model_stats: {"MSE": number, "RMSE": number, "STD": number};
 };

@@ -8,7 +8,6 @@ import {
   Text,
   Tooltip,
 } from "@chakra-ui/react";
-import { useState } from "react";
 
 const CustomSlider = (props:any) => {
 
@@ -20,7 +19,7 @@ const CustomSlider = (props:any) => {
           defaultValue={1}
           orientation="vertical"
           min={0.2}
-          max={2}
+          max={5}
           step={0.2}
           onChange={(v) => props.handleSlider(v)}
         >
@@ -58,10 +57,10 @@ export default function Sliders(props:any) {
         <CustomSlider handleSlider={props.handleSlider2} sliderValue={props.sliderValue2}/>
         <CustomSlider handleSlider={props.handleSlider3} sliderValue={props.sliderValue3}/>
       </HStack>
-      <HStack w="100%" mt="5" alignItems="left" justifyContent="space-around">
-        <Text textAlign='center'>one</Text>
-        <Text textAlign='center'>two</Text>
-        <Text textAlign='center'>three</Text>
+      <HStack w="100%" mt="2" alignItems="left" justifyContent="space-around">
+        <Tooltip label="Average years of total schooling"><Text textAlign='center' fontSize='3xl'>📚</Text></Tooltip>
+        <Tooltip label="Graduation from Post Secondary"><Text textAlign='center' fontSize='3xl'>🎓</Text></Tooltip>
+        <Tooltip label="Population Growth"><Text textAlign='center' fontSize='3xl'>👶</Text></Tooltip>
       </HStack>
     </>
   );

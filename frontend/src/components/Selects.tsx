@@ -2,13 +2,18 @@ import { Box, Select } from "@chakra-ui/react";
 import { countries } from "../data/countries";
 import getUnicodeFlagIcon from "country-flag-icons/unicode";
 
-export default function Selects() {
+export default function Selects({ setCountry }: any) {
+
+  const handleCountryChange = (e: any) => {
+    setCountry(e?.target?.value)
+  }
+
   return (
     <Box mt="5" bg="boxGradient" borderRadius="lg" color="white">
       <Select
-        placeholder="Select a country..."
         border="none"
         defaultValue={"CA"}
+        onChange={handleCountryChange}
       >
         {countries
           .sort((a, b) => {

@@ -6,15 +6,17 @@ import {
   Text,
   useBreakpointValue,
   VStack,
+  Tooltip
 } from "@chakra-ui/react";
 
 type CircleProps = {
   value: number;
   label: string;
+  tooltip: string;
   loading?: boolean;
 };
 
-const Circle = ({ value, label, loading }: CircleProps) => {
+const Circle = ({ value, label, tooltip, loading }: CircleProps) => {
   const size = useBreakpointValue({
     base: "50px",
     lg: "75px",
@@ -24,22 +26,24 @@ const Circle = ({ value, label, loading }: CircleProps) => {
     value > 25
       ? value > 50
         ? value > 75
-          ? "pink.300"
+          ? "black"
           : "pink.500"
         : "purple.500"
-      : "black";
+      : "pink.300";
 
   return (
     <VStack>
-      <CircularProgress
-        color={color}
-        value={value}
-        thickness="7px"
-        size={size}
-        isIndeterminate={loading}
-      >
-        <CircularProgressLabel>{`${value}%`}</CircularProgressLabel>
-      </CircularProgress>
+      <Tooltip label={tooltip}>
+        <CircularProgress
+          color={color}
+          value={value}
+          thickness="7px"
+          size={size}
+          isIndeterminate={loading}
+        >
+          <CircularProgressLabel>{`${(value / 100).toFixed(2)}`}</CircularProgressLabel>
+        </CircularProgress>
+      </Tooltip>
       <Text
         fontWeight="bold"
         background="linear-gradient(to right, #373737 0%, #000000 90%)"
@@ -51,14 +55,13 @@ const Circle = ({ value, label, loading }: CircleProps) => {
   );
 };
 
-export default function PercentWheel() {
+export default function PercentWheel({ stats }: { stats: any}) {
   return (
     <Center w="100%" py='15px'>
       <HStack w="100%" justifyContent="space-around">
-        <Circle value={77} label="Error" />
-        <Circle value={59} label="STD. Dev" />
-        <Circle value={30} label="Accur" />
-        <Circle value={10} label="Poggins" />
+        <Circle tooltip="model mean squared error" value={stats.MSE * 100} label="MSE" />
+        <Circle tooltip="model root mean squared error" value={stats.RMSE * 100} label="RMSE" />
+        <Circle tooltip="model standard deviation" value={stats.STD * 100} label="Std. Dev" />
       </HStack>
     </Center>
   );

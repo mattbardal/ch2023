@@ -16,9 +16,11 @@ export default function MainContainer() {
       
       */}
 
-      <Selects />
-      <Graph />
-      <PercentWheel />
+      <Box shadow='full' bg='grey.50' borderRadius='lg'>
+        <Selects />
+        <Graph />
+        <PercentWheel />
+      </Box>
       <Sliders />
     </Box>
   );

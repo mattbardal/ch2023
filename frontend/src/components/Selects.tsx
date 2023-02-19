@@ -44,7 +44,7 @@ export default function Selects() {
   const group = getRootProps();
 
   return (
-    <HStack {...group} p="10px" borderRadius="lg" bg="grey.50" boxShadow="lg">
+    <HStack {...group} p="10px">
       {options.map((value) => {
         const radio = getRadioProps({ value });
 

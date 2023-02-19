@@ -4,8 +4,35 @@ import PercentWheel from "../components/PercentWheel";
 import Selects from "../components/Selects";
 import Sliders from "../components/Sliders";
 import InfoButton from "../components/InfoButton";
+import { useEffect, useState } from "react";
 
 export default function MainContainer() {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    fetch("http://localhost:8000/", {
+      method: "POST",
+      headers: {
+        "Allow-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "svr",
+        params: [
+          88.04305267, 68.88765423, 5.334666667, 2.763333333, 0.4993333333,
+          8.596, 1.08, 6.82, 31.97, 17.39, 48.21, 9.66, 18.74, 13.22047428,
+          31.59305006, 525193392688, 24629.21556, 30115.28124, 858875684380,
+          6.200091389, 76.43441598, 41.45066667, 73.33933258, 16838398.58,
+          234234234,
+        ],
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
+  console.log(data);
+
   return (
     <Box borderRadius="lg">
       <Grid

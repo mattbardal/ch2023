@@ -3,9 +3,10 @@ from flask import request
 import joblib
 import numpy as np
 from flask_cors import CORS, cross_origin
+from flask import jsonify
 
 app = Flask(__name__)
-cors = CORS(app)
+cors = CORS(app, origins="*", supports_credentials=True)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 SVR_MODEL = joblib.load('final_svr.pkl')
@@ -14,10 +15,10 @@ SCALER = joblib.load('education_gini_scaler.pkl')
 
 
 @app.route("/", methods=['POST'])
-@cross_origin()
+@cross_origin(supports_credentials=True)
 def post():
     data = request.get_json()
-    return {
+    return jsonify({
         'actual': {
             1975: 33.3,
             1981: 32.4,
@@ -38,7 +39,7 @@ def post():
             2017: 33.3
         },
         'prediction': generatePrediction(data.get('model'), data.get('params'))
-    }
+    })
 
 def scale(params):
     return SCALER.fit_transform(np.array(params).reshape(1, -1))
@@ -48,8 +49,8 @@ def generatePrediction(model, params):
         current_model = SVR_MODEL
     else:
         current_model = RFR_MODEL
-    print(params)
+    print(current_model.predict(scale(params))[0])
     return current_model.predict(scale(params))[0]
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4001)
+    app.run(host='0.0.0.0', port=8000, debug=True)

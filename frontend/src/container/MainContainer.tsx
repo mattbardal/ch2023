@@ -1,5 +1,5 @@
 
-import { Box, Center, Grid, GridItem, Radio, RadioGroup, Stack } from "@chakra-ui/react";
+import { Box, Center, Grid, GridItem, Radio, RadioGroup, Stack, Text } from "@chakra-ui/react";
 import Graph from "../components/Graph";
 import PercentWheel from "../components/PercentWheel";
 import Selects from "../components/Selects";

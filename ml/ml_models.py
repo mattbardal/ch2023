@@ -20,7 +20,7 @@ def post():
     data = request.get_json()
     return jsonify({
         'actual': {
-            1975: 33.3,
+            1975: 33.3, 
             1981: 32.4,
             1987: 31.5,
             1991: 31.0,

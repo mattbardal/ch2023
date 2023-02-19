@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
   ErrorBar,
 } from "recharts";
+import { Data } from "../types";
 
 // generate some random data
 const data = [
@@ -20,6 +21,10 @@ const data = [
   { name: "Page E", uv: 278, pv: 3908 / 10, amt: 2400, errorY: 10, errorX: 10 },
   { name: "Page F", uv: 189, pv: 4800 / 10, amt: 2400, errorY: 10, errorX: 10 },
 ];
+
+// type Props = {
+//   data: Data;
+// };
 
 export default function Graph() {
   const [isLoading, setIsLoading] = useState(true);

@@ -49,7 +49,7 @@ export const PredictionQuery = extendType({
               [key: string]: number;
             };
           }
-        >("http://localhost:4001/", {
+        >("http://localhost:8000/", {
           model,
           params,
         });

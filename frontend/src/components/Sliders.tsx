@@ -6,21 +6,39 @@ import {
   SliderThumb,
   SliderTrack,
   Text,
+  Tooltip,
 } from "@chakra-ui/react";
+import { useState } from "react";
 
 const CustomSlider = () => {
+
+  const [sliderValue, setSliderValue] = useState(1)
+  const [showTooltip, setShowTooltip] = useState(true)
+
   return (
     <>
-      <Box p="3" bgColor="grey.50" borderRadius="full" shadow="lg">
+      <Box p="3" py='20px' bgColor="grey.50" borderRadius="full" shadow="lg">
         <Slider
           aria-label="slider-ex-2"
-          defaultValue={30}
+          defaultValue={1}
           orientation="vertical"
+          min={1} max={10} step={0.2}
+          onChange={(v) => setSliderValue(v)}
         >
           <SliderTrack>
             <SliderFilledTrack bg="linear-gradient(to right, #8377D1 10%, #cb92bf )" />
           </SliderTrack>
-          <SliderThumb />
+          <Tooltip
+        hasArrow
+        bg="linear-gradient(to right, #8377D1 10%, #cb92bf )"
+        color='white'
+        placement='right'
+        isOpen
+        label={`${sliderValue}%`}
+        borderRadius='lg'
+      >
+        <SliderThumb w='20px' h='20px' />
+      </Tooltip>
         </Slider>
       </Box>
     </>

@@ -1,5 +1,6 @@
 import { Box, Select } from "@chakra-ui/react";
 import { countries } from "../data/countries";
+import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 
 export default function Selects() {
   return (
@@ -16,7 +17,7 @@ export default function Selects() {
       >
         {countries.map((country) => (
           <option key={country.country} value={country.country}>
-            {country.name}
+            {getUnicodeFlagIcon(country.name)} {country.name}
           </option>
         ))}
       </Select>

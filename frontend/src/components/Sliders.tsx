@@ -10,8 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-const CustomSlider = () => {
-  const [sliderValue, setSliderValue] = useState(1);
+const CustomSlider = (props:any) => {
 
   return (
     <>
@@ -23,7 +22,7 @@ const CustomSlider = () => {
           min={0.2}
           max={2}
           step={0.2}
-          onChange={(v) => setSliderValue(v)}
+          onChange={(v) => props.handleSlider(v)}
         >
           <SliderTrack>
             <SliderFilledTrack bg="boxGradient" />
@@ -34,7 +33,7 @@ const CustomSlider = () => {
             color="white"
             placement="right"
             isOpen
-            label={`${sliderValue}x`}
+            label={`${props.sliderValue}x`}
             borderRadius="lg"
           >
             <SliderThumb w="20px" h="20px" border="2pt solid #B1B1B1" />
@@ -45,7 +44,7 @@ const CustomSlider = () => {
   );
 };
 
-export default function Sliders() {
+export default function Sliders(props:any) {
   return (
     <>
       <HStack
@@ -55,14 +54,14 @@ export default function Sliders() {
         alignItems="left"
         justifyContent="space-around"
       >
-        <CustomSlider />
-        <CustomSlider />
-        <CustomSlider />
+        <CustomSlider handleSlider={props.handleSlider1} sliderValue={props.sliderValue1}/>
+        <CustomSlider handleSlider={props.handleSlider2} sliderValue={props.sliderValue2}/>
+        <CustomSlider handleSlider={props.handleSlider3} sliderValue={props.sliderValue3}/>
       </HStack>
       <HStack w="100%" mt="5" alignItems="left" justifyContent="space-around">
-        <Text>one</Text>
-        <Text>two</Text>
-        <Text>three</Text>
+        <Text textAlign='center'>one</Text>
+        <Text textAlign='center'>two</Text>
+        <Text textAlign='center'>three</Text>
       </HStack>
     </>
   );

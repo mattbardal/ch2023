@@ -30,15 +30,9 @@ const CustomSlider = () => {
           </SliderTrack>
           <Tooltip
             hasArrow
-<<<<<<< HEAD
-            bg="linear-gradient(to right, #8377D1 10%, #cb92bf )"
+            bg="boxGradient"
             color="white"
             placement="right"
-=======
-            bg="boxGradient"
-            color='white'
-            placement='right'
->>>>>>> bcb2318 (added gini info modal)
             isOpen
             label={`${sliderValue}x`}
             borderRadius="lg"
